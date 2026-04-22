@@ -14,6 +14,8 @@ export default function Loader() {
                     <div key={i} className="bg-[#1c1c1c] border border-[#4d4b4b]/50 p-6 rounded-2xl h-28"></div>
                 ))}
                 <div className="bg-[#1c1c1c] border border-[#4d4b4b]/50 p-6 rounded-2xl md:col-span-3 h-40"></div>
+
+                <div className="bg-[#1c1c1c] border border-[#4d4b4b]/50 p-6 rounded-2xl md:col-span-3 h-40"></div>
                 <div className="bg-[#1c1c1c] border border-[#4d4b4b]/50 p-6 rounded-2xl md:col-span-3 h-24"></div>
             </div>
         </div>

@@ -105,7 +105,8 @@ export default function OutputCard({ data, onBack }) {
           <button
             onClick={handleDownload}
             disabled={loading}
-            className="px-4 py-2 border border-[#9cc300] bg-[#1c1c1c] text-[#9cc300] hover:bg-[#9cc300] hover:text-black rounded-full text-sm disabled:opacity-50"
+            className={`px-4 py-2 border border-[#9cc300] bg-[#1c1c1c] text-[#9cc300] 
+            hover:bg-[#9cc300] hover:text-black rounded-full text-sm disabled:opacity-50 ${loading?"animate-pulse":"animate-none"}`}
           >
             {loading ? "Generating..." : "Export PDF"}
           </button>
@@ -136,8 +137,8 @@ export default function OutputCard({ data, onBack }) {
             <div className="space-y-4">
               {scenes.map((scene) => (
                 <div key={scene.id} className="flex gap-5 ">
-                  <p className="text-xs text-[#828080] font-semibold mb-2 uppercase tracking-wider">
-                    Scene {scene.id}:
+                  <p className="flex items-start text-xs text-[#828080] font-semibold mb-2 uppercase tracking-wider">
+                    Scene <span>{scene.id}:</span>
                   </p>
 
                   <p className="text-white font-medium text-sm leading-relaxed italic">
@@ -148,10 +149,10 @@ export default function OutputCard({ data, onBack }) {
             </div>
           </div>
           <div className="bg-[#1c1c1c]  border border-[#4d4b4b]/50 p-6 rounded-2xl">
-            <h3 className="font-semibold mb-3 uppercase text-[#828080]  tracking-wider">
+            <h3 className="font-semibold mb-3 uppercase text-white text-sm  tracking-wider">
               Targeting Specs
             </h3>
-            <p className="text-sm text-gray-400">
+            <p className="text-xs text-[#828080]">
               Audience: {data.audience || "N/A"}
             </p>
             <p className="text-sm text-gray-400">Platform: TikTok / Reels</p>
@@ -189,14 +190,6 @@ export default function OutputCard({ data, onBack }) {
               {data["Performance Direction"] || "No data"}
             </p>
           </div>
-          <div className="bg-[#1c1c1c] border border-[#4d4b4b]/50 p-6 rounded-2xl md:col-span-2">
-            <h3 className="font-semibold mb-3 uppercase text-white tracking-wider text-sm">
-              Core Concept
-            </h3>
-            <p className="text-[#828080] text-xs whitespace-pre-line">
-              {data["Core Concept"] || "No data"}
-            </p>
-          </div>
           <div className="bg-[#1c1c1c] border border-[#4d4b4b]/50 p-6 rounded-2xl">
             <h3 className="font-semibold mb-3 uppercase text-white tracking-wider text-sm">
               Engagement Tips
@@ -205,6 +198,17 @@ export default function OutputCard({ data, onBack }) {
               {data["Engagement Tips"] || "No tips"}
             </p>
           </div>
+          <div className="bg-[#1c1c1c] border border-[#4d4b4b]/50 p-6 rounded-2xl md:col-span-3">
+            <h3 className="font-semibold mb-3 uppercase text-white tracking-wider text-sm">
+              Core Concept
+            </h3>
+            <p className="text-[#828080] text-xs whitespace-pre-line">
+              {data["Core Concept"] || "No data"}
+            </p>
+          </div>
+
+        
+
           <div className="bg-[#1c1c1c] border border-[#4d4b4b]/50 p-6 rounded-2xl md:col-span-3">
             <h3 className="font-semibold mb-3 uppercase  tracking-wider text-white text-sm">
               Scene Breakdown
