@@ -12,8 +12,7 @@ export default function App() {
       setLoading(true);
       setOutput(null);
 
-      const res = await fetch("http://localhost:5000/generate-video", {
-        method: "POST",
+      const res = await fetch("https://promo-script-generator.onrender.com/generate-video", {        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
