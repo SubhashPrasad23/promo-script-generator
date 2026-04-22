@@ -57,7 +57,6 @@ Based on the user input, generate:
 
 
 PRODUCT UNDERSTANDING RULE:
-
 - First, intelligently interpret the product/category from the Product input.
 - If it's a known category (e.g., mobile, skincare, restaurant, clothing, app, etc.):
   → Identify key features, benefits, and selling points automatically.
